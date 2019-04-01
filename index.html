@@ -38,75 +38,21 @@
 
 
     <script>
-        function submitAndShare(intx) {
-            var title = '';
-            var description = '';
-            var image = '';
-            switch (intx) {
-                case '1':
-                    title = 'Easybook frf discount up to 50%'
-                    description = 'Easybook now available frf. The most friend join the more discount you get. (up to 50%)'
-                    image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLli_S-rePyPwjO4Stjw3ETjJyzKYkOe0wTXMxH7aHW4sPnjmuqA';
-                    break;
-                default:
-                    title = 'Easybook frf discount up to 90%'
-                    description = 'Easybook now available frf. The most friend join the more discount you get. (up to 90%)'
-                    image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyE6kMN05ppG4-Z09RQsDYcqluUd3klVQu9jv1pJy0pxm96Plj';
-                    break;
-            }
-
-            shareOverrideOGMeta('https://ezb2018.github.io/fbtest/',
-                title,
-                description,
-                image);
-
-            return false;
-        }
-
-        function shareOverrideOGMeta(overrideLink, overrideTitle, overrideDescription, overrideImage) {
-            FB.ui({
-                method: 'share_open_graph',
-                action_type: 'og.likes',
-                action_properties: JSON.stringify({
-                    object: {
-                        'og:url': overrideLink,
-                        'og:title': overrideTitle,
-                        'og:description': overrideDescription,
-                        'og:image': overrideImage
-                    }
-                })
-            },
-                function (response) {
-                    // Action after response
-                });
-        }
-
-        function shareOriginal() {
-			FB.ui({
-                method: 'share_open_graph',
-                action_type: 'og.likes',
-                action_properties: JSON.stringify({
-                    object: {
-                        'og:url': 'https://ezb2018.github.io/fbtest/',
-                        'og:title': '1',
-                        'og:description': '2',
-                        'og:image': 'https://cdn.msiapromos.com/wp-content/uploads/2015/09/Easybook-Logo-28-Sep-2015.jpg'
-                    }
-                })
-            },
-			function (response) {
-				// Action after response
-			});
-		
-		
-            /*FB.ui({
-                method: 'share',
-                href: 'https://ezb2018.github.io/fbtest/',
-            }, function (response) { });
-*/
-            return false;
-        }
-
+		FB.ui({
+			method: 'share_open_graph',
+			action_type: 'og.likes',
+			action_properties: JSON.stringify({
+				object: {
+					'og:url': 'https://ezb2018.github.io/fbtest/',
+					'og:title': '1',
+					'og:description': '2',
+					'og:image': 'https://cdn.msiapromos.com/wp-content/uploads/2015/09/Easybook-Logo-28-Sep-2015.jpg'
+				}
+			})
+		},
+		function (response) {
+			// Action after response
+		});
     </script>
 </body>
 </html>
