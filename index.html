@@ -20,11 +20,22 @@
 </body>
 <a href="#" onclick="abc();">XXX</a>
 	<script>
-	 function OpenPopupCenter(pageURL, title, w, h) {
-		var left = (screen.width - w) / 2;
-		var top = (screen.height - h) / 4;
-		var targetWin = window.open(pageURL, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
-	} 
+	 function PopupCenter(url, title, w, h) {
+		// Fixes dual-screen position                         Most browsers      Firefox
+		var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : window.screenX;
+		var dualScreenTop = window.screenTop != undefined ? window.screenTop : window.screenY;
+
+		var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
+		var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
+
+		var systemZoom = width / window.screen.availWidth;
+		var left = (width - w) / 2 / systemZoom + dualScreenLeft
+		var top = (height - h) / 2 / systemZoom + dualScreenTop
+		var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w / systemZoom + ', height=' + h / systemZoom + ', top=' + top + ', left=' + left);
+
+		// Puts focus on the newWindow
+		if (window.focus) newWindow.focus();
+	}
 	
 	/*window.fbAsyncInit = function () {
             FB.init({
@@ -48,7 +59,7 @@
 			method: 'share',
 			href: 'https://ezb2018.github.io/fbtest',
 		}, function (response) { });*/
-		OpenPopupCenter('https://www.facebook.com/dialog/feed?app_id=622682248182826&display=popup&link=https%3A%2F%2Fezb2018.github.io%2Ffbtest%2F','Easybook Share','500','500')
+		PopupCenter('https://www.facebook.com/dialog/feed?app_id=622682248182826&display=popup&link=https%3A%2F%2Fezb2018.github.io%2Ffbtest%2F','Easybook Share','900','500')
     }
 	</script>
 </html>
