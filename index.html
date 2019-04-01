@@ -38,9 +38,11 @@
 		fjs.parentNode.insertBefore(js, fjs);
 	}(document, 'script', 'facebook-jssdk'));
 	
-	FB.ui({
-        method: 'feed',
-        link: 'https://ezb2018.github.io/fbtest/'
-    }, function (response) { });
+	function init() {
+		FB.ui({
+			method: 'feed',
+			link: 'https://ezb2018.github.io/fbtest/'
+		}, function (response) { });
+    }
 	</script>
 </html>
