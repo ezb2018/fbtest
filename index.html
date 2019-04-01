@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta property="fb:app_id" content="622682248182826">
+    <meta property="og:site_name" content="Facebook for Developers">
+    <meta property="og:title" content="Facebook for Developers">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ezb2018.github.io/fbtest/">
+    <meta property="og:image" content="https://static.xx.fbcdn.net/rsrc.php/v3/yb/r/-Hn0KbzDJps.png">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:description" content="Code to connect people with Facebook. Explore AI, business tools, gaming, open source, publishing, social hardware, social integration, and virtual reality. Learn about Facebook’s global programs to educate and connect developers.">
+    <meta name="twitter:site:id" content="63359297">
+    <meta name="twitter:card" content="summary">
+	
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+</head>
+<body>
+</body>
+	<script>
+	window.fbAsyncInit = function () {
+            FB.init({
+                appId: '622682248182826',
+                cookie: true,
+                xfbml: true,
+                version: 'v3.2'
+            });
+        };
+		
+	(function (d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/sdk.js";
+		fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	
+	FB.ui({
+        method: 'feed',
+        link: 'https://ezb2018.github.io/fbtest/'
+    }, function (response) { });
+	</script>
+</html>
