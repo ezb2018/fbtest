@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
     <meta property="fb:app_id" content="622682248182826">
-    <meta property="og:site_name" content="Easybook Sdn. Bhd. 2019">
-    <meta property="og:title" content="Easybook Sdn. Bhd. 2019">
+    <meta property="og:site_name" content="Easybook Sdn. Bhd. 20191">
+    <meta property="og:title" content="Easybook Sdn. Bhd. 20191">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://ezb2018.github.io/fbtest/">
     <meta property="og:image" content="https://cloud.glstock.com/60183/3511591/lightning-flash-strike-background-easy-editable.jpg">
@@ -20,23 +20,6 @@
 </body>
 <a href="#" onclick="abc();">XXX</a>
 	<script>
-	 function PopupCenter(url, title, w, h) {
-		// Fixes dual-screen position                         Most browsers      Firefox
-		var dualScreenLeft = window.screenLeft != undefined ? window.screenLeft : window.screenX;
-		var dualScreenTop = window.screenTop != undefined ? window.screenTop : window.screenY;
-
-		var width = window.innerWidth ? window.innerWidth : document.documentElement.clientWidth ? document.documentElement.clientWidth : screen.width;
-		var height = window.innerHeight ? window.innerHeight : document.documentElement.clientHeight ? document.documentElement.clientHeight : screen.height;
-
-		var systemZoom = width / window.screen.availWidth;
-		var left = (width - w) / 2 / systemZoom + dualScreenLeft
-		var top = (height - h) / 2 / systemZoom + dualScreenTop
-		var newWindow = window.open(url, title, 'scrollbars=yes, width=' + w / systemZoom + ', height=' + h / systemZoom + ', top=' + top + ', left=' + left);
-
-		// Puts focus on the newWindow
-		if (window.focus) newWindow.focus();
-	}
-	
 	/*window.fbAsyncInit = function () {
             FB.init({
                 appId: '622682248182826',
@@ -59,7 +42,7 @@
 			method: 'share',
 			href: 'https://ezb2018.github.io/fbtest',
 		}, function (response) { });*/
-		PopupCenter('https://www.facebook.com/dialog/feed?app_id=622682248182826&display=popup&link=https%3A%2F%2Fezb2018.github.io%2Ffbtest%2F','Easybook Share','900','500')
+		window.open('https://www.facebook.com/dialog/feed?scrape=true&app_id=622682248182826&display=popup&link=https%3A%2F%2Fezb2018.github.io%2Ffbtest%2F','_blank','width=200,height=100')
     }
 	</script>
 </html>
